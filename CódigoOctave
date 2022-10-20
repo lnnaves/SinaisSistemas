@@ -1,0 +1,18 @@
+clear all
+close all
+clc
+
+pkg load control %%carrega o pacote control
+
+R = 10e3;
+L = 1e-3;
+C = 1e-6;
+
+num = [1];
+den = [L*C R*C 1];
+
+SYS = tf(num,den);
+
+step(SYS,0.1);
+
+%%Exercicio 1 Lista 2
